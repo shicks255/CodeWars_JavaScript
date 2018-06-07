@@ -1,0 +1,54 @@
+<!--Given an array of integers your solution should find the smallest integer.-->
+
+<!--For example:-->
+
+<!--Given [34, 15, 88, 2] your solution will return 2-->
+<!--Given [34, -345, -1, 100] your solution will return -345-->
+<!--You can assume, for the purpose of this kata, that the supplied array will not be empty.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Solution</h1>
+
+<script>
+
+    //better way to do it... Math.min.apply(null, args)
+    function findSmallestInt(args)
+    {
+        let smallest = NaN;
+        args.forEach((value, index) =>
+        {
+            if (!smallest || smallest > value)
+                smallest = value;
+        });
+
+        return smallest;
+    }
+
+    const testArray1 = [78,56,232,12,8] //'Should return the smallest int 8');
+    alert(findSmallestInt(testArray1));
+
+    const testArray2 = [78,56,232,12,18]//'Should return the smallest int 12');
+    alert(findSmallestInt(testArray2));
+
+    const testArray3 = [78,56,232,412,228] //'Should return the smallest int 56');
+    alert(findSmallestInt(testArray3));
+
+    const testArray4 = [78,56,232,12,0] //'Should return the smallest int 0');
+    alert(findSmallestInt(testArray4));
+
+    const testArray5 = [1,56,232,12,8] //'Should return the smallest int 1');
+    alert(findSmallestInt(testArray5));
+
+
+</script>
+
+
+</body>
+</html>

@@ -12,17 +12,17 @@
 
 <h1>Solution</h1>
 
+<script src="solution.js"></script>
 <script>
 
-    import solution from "solution.js";
+    var string1 = "bitcoin take over the world maybe who knows perhaps"; //3
+    var string2 = "turns out random test cases are easier than writing out basic ones"; //3
 
-    var string1 = "bitcoin take over the world maybe who knows perhaps";
-    var string2 = "turns out random test cases are easier than writing out basic ones";
+    var string1Method = shortestWordFinder(string1);
+    var string2Method = shortestWordFinder(string2);
 
-    var solver = solution.shortesWordFinder(string1);
-
-    // Test.assertEquals(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
-    // Test.assertEquals(findShort("turns out random test cases are easier than writing out basic ones"), 3);
+    alert(string1Method());
+    alert(string2Method());
 
 </script>
 

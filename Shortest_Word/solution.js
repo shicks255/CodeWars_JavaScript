@@ -1,9 +1,10 @@
 
-export function shortestWordFinder(string)
+function shortestWordFinder(string)
 {
+    chunks = string.split(' ').map( (value, index) => value.length);
 
-    chunks = string.toArray();
-
-    console.log(chunks);
-
+    return function()
+    {
+        return(Math.min(...chunks));
+    }
 }

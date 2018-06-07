@@ -11,25 +11,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="solution.js"></script>
 </head>
 <body>
 
 <h1>Solution</h1>
 
 <script>
-
-    //better way to do it... Math.min.apply(null, args)
-    function findSmallestInt(args)
-    {
-        let smallest = NaN;
-        args.forEach((value, index) =>
-        {
-            if (!smallest || smallest > value)
-                smallest = value;
-        });
-
-        return smallest;
-    }
 
     const testArray1 = [78,56,232,12,8] //'Should return the smallest int 8');
     alert(findSmallestInt(testArray1));
@@ -45,7 +33,6 @@
 
     const testArray5 = [1,56,232,12,8] //'Should return the smallest int 1');
     alert(findSmallestInt(testArray5));
-
 
 </script>
 

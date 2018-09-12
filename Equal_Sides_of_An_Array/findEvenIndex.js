@@ -28,3 +28,11 @@ function findEvenIndex(array)
 
     return -1;
 }
+
+function findEvenIndex2(array)
+{
+    const length = array.length;
+
+
+
+}

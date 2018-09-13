@@ -42,11 +42,18 @@ function willWork(counter) {
     }
 }
 
+//closure with IIFE
 function willWorkClosure(counter)
 {
     var i = counter;
     for (; i >= 0; i--)
     {
-
+        (function(i){
+            setTimeout(() => {
+                console.log(i + '...');
+                if (i === 0)
+                    console.log("BLAST OFF");
+            }, (counter - i) * 1000);
+        })(i);
     }
 }

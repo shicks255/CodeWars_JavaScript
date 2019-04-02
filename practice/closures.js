@@ -45,8 +45,8 @@ function willWork(counter) {
 //closure with IIFE
 function willWorkClosure(counter)
 {
-    var i = counter;
-    for (; i >= 0; i--)
+    var n = counter;
+    for (; n >= 0; n--)
     {
         (function(i){
             setTimeout(() => {
@@ -54,6 +54,8 @@ function willWorkClosure(counter)
                 if (i === 0)
                     console.log("BLAST OFF");
             }, (counter - i) * 1000);
-        })(i);
+        })(n);
     }
+
+    console.log(n);
 }

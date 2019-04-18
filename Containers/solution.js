@@ -9,7 +9,6 @@ function Containers(input) {
         {
             let added = false;
             let containerToAdd = containers.find((v2) => {
-                console.log(v2);
                 if (v2[v2.length-1] >= v )
                     return true;
                 return false;
@@ -24,7 +23,6 @@ function Containers(input) {
                 containers.push([v]);
         }
     });
-    console.log(containers);
     return containers.length;
 }
 

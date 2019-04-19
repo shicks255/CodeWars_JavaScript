@@ -22,36 +22,39 @@ function vowelRecognition(input){
 }
 
 function vowelRecognition2(input){
-    function recurse(n){
-        if (n === 1)
-            return 1;
-        else
-            return n*recurse(n-1)
-    }
-
-    let answer = 0;
     let vowels = ['a','e','i','o','u','A','E','I','O','U'];
-    let numOfVowels = input.split('').filter((v) => vowels.includes(v)).length;
-    let numOfNonVowels = input.length - numOfVowels;
-    for (let i = 1; i < input.length; i++){
-        if (numOfVowels >= i) {
-            // answer += numOfVowels*i;
-            // let t = recurse(numOfVowels/i);
-            let t = i * i > 1 ? i-1 : 1;
-            let j = t * numOfVowels-i+1;
-            answer += j;
-        }
-        answer += (numOfVowels * (Math.floor(numOfNonVowels/i)));
+    let appearanceCount = [];
+    for (let i = 0; i < input.length; i++){
+        let adder = input.length + appearanceCount[appearanceCount.length-1]-((i)*2);
+        if (i === 0)
+            adder = input.length;
+        appearanceCount.push(adder);
     }
+    let answer = 0;
+    input.split('').forEach((v,i) => {
+        if (vowels.includes(v)){
+            answer += appearanceCount[i];
+        }
+    });
 
-    console.log(answer);
     return answer;
 }
 
-// console.log(vowelRecognition2("ba") === 2);
-// console.log(vowelRecognition2("bab") === 4);
-// console.log(vowelRecognition2("aba") === 6);
-console.log(vowelRecognition2("aeio") === 0);//14
-// console.log(vowelRecognition2("baceb") === 16);
-// console.log(vowelRecognition2("baceb") === 16);
-// console.log(vowelRecognition2("aeiouAEIOU") === 220);
+console.log(vowelRecognition2("ba"));//2
+console.log(vowelRecognition2("aba"));//6
+console.log(vowelRecognition2("aaa"));//10
+console.log(vowelRecognition2("bbbb"));//0
+console.log(vowelRecognition2("baceb"));//16
+console.log(vowelRecognition2("abcdef"));//16
+// console.log(vowelRecognition2("baecb"));//16
+// console.log(vowelRecognition("baecb"));//16
+// console.log(vowelRecognition("baceb"));//16
+// console.log(vowelRecognition("aeiou"));//35
+// console.log(vowelRecognition2("aeiouAEIOU"));//220
+// console.log(vowelRecognition("bab"));//4
+// console.log(vowelRecognition("aba"));//6
+// console.log(vowelRecognition2("aei"));//7
+// console.log(vowelRecognition("aei"));//7
+// console.log(vowelRecognition2("aeio"));//14
+// console.log(vowelRecognition2("aeiou"));//
+// console.log(vowelRecognition("baceb"));//16

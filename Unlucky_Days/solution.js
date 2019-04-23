@@ -1,6 +1,5 @@
 
 function unluckyDays(year){
-
     let counts = 0;
     for (let i = 0; i < 12; i++){
         let date = new Date(year, i, 13);

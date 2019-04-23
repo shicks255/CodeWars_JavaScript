@@ -35,7 +35,7 @@ function largestSum2(arr){
     let highestHere = arr[0];
     let highestSoFar = arr[0];
 
-    for (i = 1; i < arr.length; i++){
+    for (let i = 1; i < arr.length; i++){
         highestHere = Math.max(arr[i], highestHere + arr[i]);
         highestSoFar = Math.max(highestHere, highestSoFar);
     }
@@ -43,8 +43,8 @@ function largestSum2(arr){
     return highestSoFar > 0 ? highestSoFar : 0;
 }
 
-// console.log(largestSum([-1,-2,-3]) === 0);
-// console.log(largestSum([]) === 0);
-// console.log(largestSum([1,2,3,4]) === 10);
+console.log(largestSum([-1,-2,-3]) === 0);
+console.log(largestSum([]) === 0);
+console.log(largestSum([1,2,3,4]) === 10);
 console.log(largestSum2([31,-41,59,26,-53,58,97,-93,-23,84]) === 187);
-// console.log(largestSum2([-1, -1, 4, -1, 4, -5]) === 7);
+console.log(largestSum2([-1, -1, 4, -1, 4, -5]) === 7);

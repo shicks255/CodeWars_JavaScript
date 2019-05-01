@@ -16,3 +16,4 @@ function spinningRings(innerMax, outerMax) {
 
 
 console.log(spinningRings(2, 3));
+console.log(spinningRings(2, 3));
